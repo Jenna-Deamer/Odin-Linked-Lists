@@ -20,7 +20,7 @@ export function LinkedList() {
             tail = newNode;
         } else {
             // current tail must point to newNode (currentEnd -> NewEnd)
-            tail.next = newNode;
+            tail.nextNode = newNode;
             // newNode becomes tail
             tail = newNode;
         }
@@ -34,7 +34,7 @@ export function LinkedList() {
     const prepend = (value) => {
         // Add new node to start of list
         const newNode = Node(value);
-
+        console.log(head)
         if (length === 0) {
             head = newNode;
             tail = newNode;
@@ -42,7 +42,7 @@ export function LinkedList() {
             console.log('prepend')
 
             // set newNode next to current head, then set it as head
-            newNode.next = head;
+            newNode.nextNode = head;
             head = newNode;
             console.log(head)
         }
