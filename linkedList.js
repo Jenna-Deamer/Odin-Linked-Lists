@@ -61,9 +61,23 @@ export function LinkedList() {
     }
 
     const getCurrentIndex = (index) => {
-        if (index > length || index < length) {
-            return null // out of bounds
-        }else {
+        console.log('index: ' + index)
+        if (index < 0 || index >= length) {
+            return 'Out of bounds'
+        } else {
+            let currentNode = head;
+            let currentIndex = 0;
+
+            while (index <= length) {
+                if (index === currentIndex) {
+                    console.log('Index found: ' + currentIndex)
+                    return currentNode;
+                } else {
+                    currentNode = currentNode.nextNode;
+              
+                    currentIndex++;
+                }
+            }
 
         }
     }
