@@ -29,8 +29,25 @@ export function LinkedList() {
         console.log(`Head is: ${JSON.stringify(head)}`);
         console.log(`Tail is: ${JSON.stringify(tail)}`);
         console.log(`Length is: ${length}`);
-
     }
 
-    return { append };
+    const prepend = (value) => {
+        // Add new node to start of list
+        const newNode = Node(value);
+
+        if (length === 0) {
+            head = newNode;
+            tail = newNode;
+        } else {
+            console.log('prepend')
+
+            // set newNode next to current head, then set it as head
+            newNode.next = head;
+            head = newNode;
+            console.log(head)
+        }
+        length++;
+    }
+
+    return { append, prepend };
 }
