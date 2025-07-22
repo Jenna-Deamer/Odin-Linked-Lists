@@ -52,8 +52,20 @@ export function LinkedList() {
         return length;
     }
 
-    const currentHead =  () =>{
+    const currentHead = () => {
         return head;
     }
-    return { append, prepend, currentSize,currentHead };
+
+    const currentTail = () => {
+        return tail;
+    }
+
+    const getCurrentIndex = (index) => {
+        if (index > length || index < length) {
+            return null // out of bounds
+        }else {
+
+        }
+    }
+    return { append, prepend, currentSize, currentHead, currentTail, getCurrentIndex };
 }
