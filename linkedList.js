@@ -48,6 +48,9 @@ export function LinkedList() {
         }
         length++;
     }
+    const size = () => {
+        return length;
+    }
 
-    return { append, prepend };
+    return { append, prepend, size };
 }
