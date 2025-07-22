@@ -48,9 +48,12 @@ export function LinkedList() {
         }
         length++;
     }
-    const size = () => {
+    const currentSize = () => {
         return length;
     }
 
-    return { append, prepend, size };
+    const currentHead =  () =>{
+        return head;
+    }
+    return { append, prepend, currentSize,currentHead };
 }
