@@ -13,8 +13,5 @@ list.append("parrot");
 
 // console.log(list.currentSize())
 
-console.log(list)
-list.pop();
-console.log(list)
+list.contains('e');
 
-console.log(list.getCurrentIndex(1));
