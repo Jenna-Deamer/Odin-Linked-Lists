@@ -74,12 +74,32 @@ export function LinkedList() {
                     return currentNode;
                 } else {
                     currentNode = currentNode.nextNode;
-              
+
                     currentIndex++;
                 }
             }
 
         }
     }
-    return { append, prepend, currentSize, currentHead, currentTail, getCurrentIndex };
+
+    const pop = () => {
+        console.log('Pop!')
+        if (length <= 0) {
+            return "Error list is empty."
+        } else {
+            let currentNode = head;
+            // Find the node beside the current tail
+            while (currentNode.nextNode != tail) {
+                currentNode = currentNode.nextNode;
+                console.log(currentNode)
+            }
+            // Remove it's pointer and set it as new tail
+            if (currentNode.nextNode === tail) {
+                currentNode.nextNode = null;
+                tail = currentNode;
+            }
+
+        }
+    }
+    return { append, prepend, currentSize, currentHead, currentTail, getCurrentIndex, pop };
 }
