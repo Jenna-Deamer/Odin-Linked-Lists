@@ -11,8 +11,7 @@ export function LinkedList() {
 
     const append = (value) => {
         const newNode = Node(value);
-        console.log("Value is: " + value);
-        console.log(newNode);
+
         if (length === 0) {
             head = newNode;
             tail = newNode;
@@ -131,9 +130,22 @@ export function LinkedList() {
             }
 
         }
-
-
     };
+
+    const listToString = () => {
+        if (length <= 0) {
+            return "List is empty";
+        } else {
+            let currentNode = head;
+            let output = '';
+            for (let i = 0; i < length; i++) {
+                output += `${currentNode.val} -> `
+                currentNode = currentNode.nextNode;
+            }
+            output += 'null'
+            return output
+        }
+    }
 
     return {
         append,
@@ -144,6 +156,7 @@ export function LinkedList() {
         getCurrentIndex,
         pop,
         contains,
-        find
+        find,
+        listToString
     };
 }

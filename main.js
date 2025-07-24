@@ -13,5 +13,5 @@ list.append("parrot");
 
 // console.log(list.currentSize())
 
-list.contains('e');
+console.log(list.listToString())
 
